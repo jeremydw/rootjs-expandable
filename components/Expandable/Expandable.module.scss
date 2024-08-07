@@ -1,0 +1,20 @@
+.expandable {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 500ms ease;
+}
+
+.expandable__content {
+  min-height: 0;
+  transition: visibility 500ms ease;
+  visibility: hidden;
+}
+
+section[open] .expandable {
+  grid-template-rows: 1fr;
+
+  .expandable__content {
+    visibility: visible;
+  }
+}
